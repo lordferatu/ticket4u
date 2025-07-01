@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Decathlon Run 2025</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <style>
+    body {
+      background: linear-gradient(white);
+      font-family: 'Segoe UI', sans-serif;
+      padding-top: 100px;
+    }
+
+    .event-card {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+
+    .event-title {
+      font-size: 32px;
+      color: #a35384;
+      font-weight: bold;
+      margin-bottom: 25px;
+      text-align: left;
+    }
+
+    .event-details {
+      background-color: #f2e0f5;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .event-details p {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #333;
+      text-align: left;
+    }
+
+    .register-box .btn {
+      background-color: rgb(20, 19, 20);
+      color: #e7dbe2;
+      font-weight: bold;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 20px;
+      margin-top: 10px;
+    }
+
+    .register-box .btn:hover {
+      background-color: #c9aac3;
+    }
+
+    .navbar-brand {
+      color: #faf5f5 !important;
+      font-size: 30px;
+      font-weight: bold;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(90deg, #a35384 60%, #fff 100%);
+      color: white;
+      margin: 40px 0 0 0;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">Ticket4U</a>
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="log in.html">Log In</a></li>
+      <li class="nav-item"><a class="nav-link" href="sign up.html">Sign Up</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="event-card mt-5">
+  <div class="event-title" id="event-title"></div>
+  <div class="event-details" id="event-details"></div>
+  <div class="register-box text-center">
+    <a href="registerform.html" class="btn">Register Now</a>
+  </div>
+</div>
+
+<footer class="mt-4">
+  <p>&copy; 2025 Ticket4U by Group 1 CDCS2514A.</p>
+</footer>
+
+<script>
+  const events = {
+    decathlon: {
+      title: "Decathlon 5KM Run 2025",
+      date: "13 June 2025",
+      time: "7:00 AM",
+      location: "Dataran Merdeka, Kuala Lumpur, Malaysia",
+      fee: "Starting from MYR 35.00",
+      categories: [
+        {label: "Adult (18+)", id:"adult", price: "MYR 35.00"},
+        {label: "Child (12-17)", id:"child", price: "MYR 25.00"}
+      ]
+    },
+    nike: {
+      title: "Nike Run 2025",
+      date: "24 June 2025",
+      time: "8:00 AM",
+      location: "Bukit Jalil, Kuala Lumpur, Malaysia",
+      fee: "Starting from MYR 40.00",
+      categories: [
+        {label: "Adult (18+)", id:"adult", price: "MYR 40.00"},
+        {label: "Child (12-17)", id:"child", price: "MYR 30.00"}
+      ]
+    },
+    keretapi: {
+      title: "Keretapi Sarong 2025",
+      date: "10 July 2025",
+      time: "9:00 AM",
+      location: "Stesen MRT Muzium Negara",
+      fee: "Free"
+    },
+    JKR: {
+      title: "JKR FUN RUN 2025",
+      date: "12 October 2025",
+      time: "7:00 AM",
+      location: "Esplanade, Georgetown, Penang, Malaysia",
+      fee: "MYR 35.00"
+    },
+    merdeka: {
+      title: "MERDEKA NIGHT RUN 2025",
+      date: "30 October 2025",
+      time: "8:00 PM",
+      location: "Perkarangan Sunshine Bertam, Penang, Malaysia",
+      fee: "MYR 41.00"
+    },
+    kl: {
+      title: "KL RUNFEST SIGHT & SOUND FUN RUN 2025",
+      date: "8 November2025",
+      time: "6:00 AM",
+      location: "Kuala Lumpur Sport City, Kuala Lumpur, Malaysia",
+      fee: "Starting from MYR 58.00",
+      categories: [
+        {label: "Adult (18+)", id:"adult", price: "MYR 79.00"},
+        {label: "Child (12-17)", id:"child", price: "MYR 58.00"}
+      ]
+    },
+    mps: {
+      title: "MPS FUN RUN 2025",
+      date: "27 July 2025",
+      time: "7:00 AM",
+      location: "Dataran MPS, Selangor, Malaysia",
+      fee: "MYR 47.00"
+    },
+    legasi: {
+      title: "Legasi P.Ramlee",
+      date: "20 September 2025",
+      time: "8:30 PM",
+      location: "Megastar Arena, Kuala Lumpur, Malaysia",
+      fee: "Depends on seat category",
+      categories: [
+        {label: "Cat 1", id:"cat1", price: "MYR 288.00"},
+        {label: "Cat 2", id:"cat2", price: "MYR 230.00"},
+        {label: "Cat 3", id:"cat3", price: "MYR 158.00"},
+        {label: "Cat 4", id:"cat4", price: "MYR 120.00"}
+      ]
+    },
+    ardence: {
+      title: "Ardence Crest @ Eco Ardence - Setia Alam | Great British Circus",
+      date: "13 July 2025",
+      time: "5:00 PM",
+      location: "Ardence Crest @ Eco Ardence Car Park, Setia Alam, Selangor, Malaysia",
+      fee: "Depend on seat category",
+      categories: [
+        {label: "Rear Seats", id:"rear", price: "MYR 54.00"},
+        {label: "Hot Seats", id:"hot", price: "MYR 64.00"}
+      ]
+    },
+    xo: {
+      title: "XO House Concert 3.0: School of Galau",
+      date: "29 June 2025",
+      time: "8:00 PM",
+      location: "Auditorium Kompleks Perdana Siswa, Universiti Malaya, Kuala Lumpur, Malaysia",
+      fee: "Depends on seat category",
+      categories: [
+        {label: "Cat 1", id:"cat1", price: "MYR 54.00"},
+        {label: "Cat 2", id:"cat2", price: "MYR 64.00"}
+      ]
+    },
+    ungu: {
+      title: "29th Symphony Of Ungu",
+      date: "12 July 2025",
+      time: "9:00 PM",
+      location: "Plenary Hall, Kuala Lumpur Convention Centre, Kuala Lumpur, Malaysia",
+      fee: "Depends on seat category",
+      categories: [
+        {label: "Cat 1", id:"cat1", price: "MYR 988.00"},
+        {label: "Cat 2", id:"cat2", price: "MYR 888.00"},
+        {label: "Cat 3", id:"cat3", price: "MYR 688.00"},
+        {label: "Cat 4", id:"cat4", price: "MYR 588.00"}
+      ]
+    },
+    asia: {
+      title: "Asia Pop Culture Convention 2025",
+      date: "9 November 2025",
+      time: "9:00 AM",
+      location: "Starling Exhibition Hall, Damansara Utama, Petaling Jaya, Selangor",
+      fee: "MYR 20.00"
+    },
+    didi: {
+      title: "Didi & Friends Treasure Hunt",
+      date: "12 October 2025",
+      time: "10:00 AM",
+      location: "Alamanda Putrajaya",
+      categories: [
+        {label: "Kids (7-12)", id:"kid", price: "MYR 25.00"}
+      ]
+    }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const eventKey = params.get('event');
+  const event = events[eventKey];
+
+  if (event) {
+    let categoriesHtml = "";
+    if (event.categories && event.categories.length > 0) {
+      event.categories.forEach(cat => {
+        categoriesHtml += `
+          <label for="${cat.id}" class="form-label"><strong>${cat.label} (${cat.price}):</strong></label>
+          <select class="form-select" id="${cat.id}" name="${cat.id}">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+          <br>
+        `;
+      });
+    }
+
+    document.getElementById("event-title").textContent = event.title;
+    document.getElementById("event-details").innerHTML = `
+      <p><strong>Date:</strong> ${event.date}</p>
+      <p><strong>Time:</strong> ${event.time}</p>
+      <p><strong>Location:</strong> ${event.location}</p>
+      <p><strong>Registration Fee:</strong> ${event.fee}</p>
+      ${categoriesHtml}
+    `;
+  } else {
+    document.getElementById('event-title').textContent = "Event Not Found";
+    document.querySelector('.event-details').innerHTML = "<p>Sorry, this event does not exist.</p>";
+  }
+</script>
+
+</body>
+</html>

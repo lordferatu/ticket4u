@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+input[type=password],
+input[type=email],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.8;
+  word-break: keep-all;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.col-25 {
+  float: left;
+  width: 30%; 
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 70%;
+  margin-top: 6px;
+}
+
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.center-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #a35384 60%, #fff 100%);
+  padding: 20px;
+}
+
+.btn {
+  background-color: rgb(214, 113, 182);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgb(147, 169, 215);
+}
+
+.row:last-child {
+  display: flex;
+  justify-content: center;
+}
+
+h1{
+    color: black;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="center-wrapper">
+  <div class="container">
+    <h1 >Log In</h1>
+    <form action="/action_page.php">
+      <div class="row">
+        <div class="col-25">
+          <label for="email">Email</label>
+        </div>
+        <div class="col-75">
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="password">Password</label>
+        </div>
+        <div class="col-75">
+          <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+      </div>
+
+      
+
+
+      <div class="row">
+        <button type="submit" class="btn">Log In </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
+   
